@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Dragontalker/oauth-passport-ninja/issues"
   },
-  "homepage": "https://github.com/Dragontalker/oauth-passport-ninja#readme"
+  "homepage": "https://github.com/Dragontalker/oauth-passport-ninja#readme",
+  "dependencies": {
+    "ejs": "^3.1.6"
+  }
 }
