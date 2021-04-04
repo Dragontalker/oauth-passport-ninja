@@ -11,7 +11,11 @@ passport.use(
         clientSecret: keys.google.clientSecret
     }, (accessToken, refreshToken, profile, done) => {
         // check if user already exists in our db
-        User.findOne({ googleId: profile.id});
+        User.findOne({ googleId: profile.id }).then((currentUser) => {
+            if (currentUser) {
+                
+            }
+        });
 
         new User({
             userName: profile.displayName,
