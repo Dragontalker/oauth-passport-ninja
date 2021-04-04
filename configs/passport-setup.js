@@ -5,6 +5,6 @@ passport.use(
     new GoogleStrategy({
         // options for the google strat
     }), () => {
-        
+        // passport callback function
     }
 );
