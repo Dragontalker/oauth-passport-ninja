@@ -10,6 +10,11 @@ const app = express();
 // set up view engine
 app.set('view engine', 'ejs');
 
+app.use(cookieSession({
+    maxAge: 24 * 60 * 60 * 1000,
+    keys: [keys.session.cookieKey]
+}));
+
 // connect to mongodb
 mongoose.connect(keys.mongodb.dbURI, () => {
     console.log('connected to mongodb');
