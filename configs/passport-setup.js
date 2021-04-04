@@ -10,9 +10,9 @@ passport.use(
         clientID: keys.google.clientID,
         clientSecret: keys.google.clientSecret
     }, (accessToken, refreshToken, profile, done) => {
-        // passport callback function
-        console.log('passport callback function fired');
-        console.log(profile);
+        // check if user already exists in our db
+        User.findOne({ googleId: profile.id});
+
         new User({
             userName: profile.displayName,
             googleId: profile.id
