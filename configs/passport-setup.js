@@ -10,5 +10,6 @@ passport.use(
         clientSecret: keys.google.clientSecret
     }, () => {
         // passport callback function
+        console.log('passport callback function fired');
     })
 );
