@@ -13,15 +13,16 @@ passport.use(
         // check if user already exists in our db
         User.findOne({ googleId: profile.id }).then((currentUser) => {
             if (currentUser) {
-                
+                // already have the user
+            } else {
+                // if not, create user in our db
+                new User({
+                    userName: profile.displayName,
+                    googleId: profile.id
+                }).save().then((newUser) => {
+                    console.log('new user created' + newUser);
+                });
             }
-        });
-
-        new User({
-            userName: profile.displayName,
-            googleId: profile.id
-        }).save().then((newUser) => {
-            console.log('new user created' + newUser);
         });
     })
 );
