@@ -5,6 +5,11 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// auth logout
+router.get('./logout', (req, res) => {
+
+});
+
 // auth with google
 router.get('/google', (req, res) => {
     //handle with passport
