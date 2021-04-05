@@ -10,8 +10,8 @@ const authCheck = (req, res, next) => {
     }
 };
 
-router.get('/', (req, res) => {
-    res.send('you are logged in, this is your profile -' + req.user.userName);
+router.get('/', authCheck, (req, res) => {
+    res.send('you are logged in, this is your profile - ' + req.user.userName);
 });
 
 module.exports = router;
