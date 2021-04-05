@@ -20,7 +20,6 @@ passport.use(
         clientID: keys.google.clientID,
         clientSecret: keys.google.clientSecret
     }, (accessToken, refreshToken, profile, done) => {
-        console.log(profile);
         // check if user already exists in our db
         User.findOne({ googleId: profile.id }).then((currentUser) => {
             if (currentUser) {
